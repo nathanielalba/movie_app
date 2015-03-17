@@ -1,4 +1,7 @@
 class MoviesController < ApplicationController
+	def welcome
+	end
+
   def index
   end
 

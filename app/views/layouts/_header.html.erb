@@ -1,0 +1,24 @@
+<nav class="navbar navbar-inverse" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="<%= root_url %>">MovieReviews</a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="<%= movies_path %>">Movies</a></li>
+				<li><a href="#">Actors</a></li>
+				<li><a href="#">What's hot?</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<% if user_signed_in? %>
+					<li><%= link_to "New Movie", new_movie_path, class: "active" %></li>
+					<li><%= link_to "Account", edit_user_registration_path %></li>
+					<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+				<% else %>
+					<li><%= link_to "Sign Up", new_user_registration_path, class: "active" %></li>
+					<li><%= link_to "Sign In", new_user_session_path, class: "active" %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</nav>
