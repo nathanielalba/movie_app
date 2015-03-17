@@ -1,0 +1,16 @@
+<h2>This is placeholder text</h2>
+
+<% @movies.each do |movie| %>
+	<div class="row">
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+				<img src="<%= movie.image.url(:medium) %>">
+				<div class="caption">
+					<h3><%= movie.title %></h3>
+					<p><%= movie.description %></p>
+					<small><strong><%= movie.runtime %> minutes long</strong></small>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>
