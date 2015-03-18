@@ -1,0 +1,16 @@
+<h2 class="header_title">Actors</h2>
+
+<div class="transitions-enabled" id="actors">
+	<% @actors.each do |obj| %>
+	<div class="box panel panel-default">
+		<%= link_to (image_tag obj.image.url(:medium)), obj %>
+		<h2>
+			<%= link_to obj.name, obj %>
+		</h2>
+		<div class="panel-body">
+			<p><%= truncate(obj.bio, length: 300, separator: ' ') %></p>
+			<p>Age: <strong><%= pluralize(obj.age, 'year' )%> old</strong></p>
+		</div>
+	</div>
+<% end %>
+</div>

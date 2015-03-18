@@ -1,0 +1,25 @@
+<div class="my_forms">
+	<h3 class="header_title">New Actor</h3>
+
+	<%= form_for @actor, html: { multipart: true, class: "form-horizontal" } do |f| %>
+		<p>
+			<%= f.label :name %>
+			<%= f.text_field :name, class: "form-control", autofocus: true %>
+		</p>
+		<p>
+			<%= f.label :bio, "Biography" %>
+			<%= f.text_area :bio, class: "form-control" %>
+		</p>
+		<p>
+			<%= f.label :age %>
+			<%= f.number_field :age, class: "form-control" %>
+		</p>
+		<p>
+			<%= f.label :image, "Actor's Picture" %>
+			<%= f.file_field :image, class: "form-control" %>
+		</p>
+		<p>
+			<%= f.submit class: "btn btn-lg btn-primary" %>
+		</p>
+	<% end %>
+</div>

@@ -1,23 +1,25 @@
-<h3>Add a new movie</h3>
+<div class="my_forms">
+	<h3 class="header_title">Add a new movie</h3>
 
-<%= form_for @movie, html: { multipart: true, class: "form-horizontal" } do |f| %>
-	<p>
-		<%= f.label :title %>
-		<%= f.text_field :title, class: "form-control", autofocus: true %>
-	</p>
-	<p>
-		<%= f.label :description, "What's it about?" %>
-		<%= f.text_area :description, class: "form-control" %>
-	</p>
-	<p>
-		<%= f.label :runtime %>
-		<%= f.number_field :runtime, class: "form-control" %>
-	</p>
-	<p>
-		<%= f.label :image, "Movie Poster" %>
-		<%= f.file_field :image, class: "form-control" %>
-	</p>
-	<p>
-		<%= f.submit class: "btn btn-lg btn-primary" %>
-	</p>
-<% end %>
+	<%= form_for @movie, html: { multipart: true, class: "form-horizontal" } do |f| %>
+		<p>
+			<%= f.label :title %>
+			<%= f.text_field :title, class: "form-control", autofocus: true %>
+		</p>
+		<p>
+			<%= f.label :description, "What's it about?" %>
+			<%= f.text_area :description, class: "form-control" %>
+		</p>
+		<p>
+			<%= f.label :runtime %>
+			<%= f.number_field :runtime, class: "form-control" %>
+		</p>
+		<p>
+			<%= f.label :image, "Movie Poster" %>
+			<%= f.file_field :image, class: "form-control" %>
+		</p>
+		<p>
+			<%= f.submit class: "btn btn-lg btn-primary" %>
+		</p>
+	<% end %>
+</div>

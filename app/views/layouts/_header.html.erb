@@ -1,17 +1,23 @@
 <nav class="navbar navbar-inverse" role="navigation">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="<%= root_url %>">MovieReviews</a>
+			<a class="navbar-brand" href="<%= authenticated_root_path %>">MovieReviews</a>
 		</div>
-		<div class="collapse navbar-collapse">
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="<%= movies_path %>">Movies</a></li>
-				<li><a href="#">Actors</a></li>
+				<li><a href="<%= actors_path %>">Actors</a></li>
 				<li><a href="#">What's hot?</a></li>
 			</ul>
+			<form class="navbar-form navbar-right" role="search">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Search MovieApp">
+				</div>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
 			<ul class="nav navbar-nav navbar-right">
 				<% if user_signed_in? %>
-					<li><%= link_to "New Movie", new_movie_path, class: "active" %></li>
+					<li><%= nav_title(:navtitle) %></li>
 					<li><%= link_to "Account", edit_user_registration_path %></li>
 					<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
 				<% else %>
