@@ -1,2 +1,30 @@
-<h1>Actors#show</h1>
-<p>Find me in app/views/actors/show.html.erb</p>
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-4">
+				<%= image_tag @actor.image.url(:medium) %>
+				<div class="table-responsive">
+					<table class="table" id="centerplz">
+						<tbody>
+							<tr>
+								<td><strong>Name:</strong></td>
+								<td><%= @actor.name %></td>
+							</tr>
+							<tr>
+								<td><strong>Bio:</strong></td>
+								<td><%= @actor.bio %></td>
+							</tr>
+							<tr>
+								<td><strong>Age:</strong></td>
+								<td><%= @actor.age %></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%= link_to 'Edit', edit_actor_path(@actor) %> |
+<%= link_to 'Back', actors_path %>
