@@ -26,5 +26,8 @@
 	</div>
 </div>
 
+<%= render "shared/comment", object: @actor %>
+<%= render "shared/comment_form", object: @actor %>
+
 <%= link_to 'Edit', edit_actor_path(@actor) %> |
 <%= link_to 'Back', actors_path %>

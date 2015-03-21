@@ -2,7 +2,7 @@
 	<div class="panel-body">
 		<div class="row">
 			<div class="col-md-4">
-				<%= image_tag @movie.image.url(:medium) %>
+				<%= image_tag @movie.image.url(:medium), class: "show-picture" %>
 				<div class="table-responsive">
 					<table class="table">
 						<tbody>
@@ -25,6 +25,9 @@
 		</div>
 	</div>
 </div>
+
+<%= render "shared/comment", object: @movie %>
+<%= render "shared/comment_form", object: @movie %>
 
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>

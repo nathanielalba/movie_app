@@ -3,4 +3,8 @@ class Actor < ActiveRecord::Base
 	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
 	validates :name, :bio, :age, :image, presence: true
+
+	has_many :comments, as: :commentable
+
+	searchkick
 end

@@ -1,16 +1,21 @@
 Rails.application.routes.draw do
-  get 'actors/index'
-
-  get 'actors/show'
-
-  get 'actors/new'
-
-  get 'actors/edit'
-
   devise_for :users
-	resources :movies
-	resources :actors
 
+  resources :search
+
+	resources :movies do
+		collection do
+			get 'search', module: :movies
+		end
+		resources :comments, module: :movies
+	end
+
+	resources :actors do
+		collection do
+			get 'search'
+		end
+		resources :comments, module: :actors
+	end
 
 	authenticated :user do
 		root to: "movies#index", as: :authenticated_root

@@ -1,4 +1,13 @@
 class MoviesController < ApplicationController
+
+  def search
+    if params[:search].present?
+      @movies = Movie.search(params[:search])
+    else
+      @movies = Movie.all
+    end
+  end
+
 	def welcome
 	end
 

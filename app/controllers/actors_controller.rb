@@ -1,4 +1,13 @@
 class ActorsController < ApplicationController
+
+  def search
+    if params[:search].present?
+      @actors = Actor.search(params[:search])
+    else
+      @actors = Actor.all
+    end
+  end
+
   def index
   	@actors = Actor.all
   end

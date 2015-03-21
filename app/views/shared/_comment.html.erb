@@ -1,0 +1,8 @@
+<h3>Comments</h3>
+<% object.comments.each do |comment| %>
+	<div class="well">
+		<%= comment.body %>
+		<p><small><em>Submitted by <%= comment.user %> <%= time_ago_in_words(comment.created_at) %> ago</em></small></p>
+	</div>
+<% end %>
+<%= console %>
