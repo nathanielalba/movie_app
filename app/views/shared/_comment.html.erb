@@ -2,7 +2,6 @@
 <% object.comments.each do |comment| %>
 	<div class="well">
 		<%= comment.body %>
-		<p><small><em>Submitted by <%= comment.user %> <%= time_ago_in_words(comment.created_at) %> ago</em></small></p>
+		<p><small><em>Submitted by: <strong><%= comment.user  %></strong> about <strong><%= time_ago_in_words(comment.created_at) %> ago</strong></em></small></p>
 	</div>
 <% end %>
-<%= console %>
